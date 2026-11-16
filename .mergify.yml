@@ -1,0 +1,11 @@
+queue_rules:
+  - name: default
+    merge_conditions:
+      - check-success=never-ci
+pull_request_rules:
+  - name: enqueue-test
+    conditions:
+      - base=main
+    actions:
+      queue:
+        name: default
